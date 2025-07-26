@@ -522,8 +522,21 @@
         "hyprland": "hyprland",
         "nixpkgs": "nixpkgs_2",
         "nur": "nur",
-        "polymc": "polymc"
+        "polymc": "polymc",
+        "sub": "sub"
       }
+    },
+    "sub": {
+      "flake": false,
+      "locked": {
+        "path": "./modules/ide/nvim/nvim/",
+        "type": "path"
+      },
+      "original": {
+        "path": "./modules/ide/nvim/nvim/",
+        "type": "path"
+      },
+      "parent": []
     },
     "systems": {
       "locked": {

@@ -14,6 +14,10 @@
             inputs.nixpkgs.follows = "nixpkgs";
       
         };
+        sub = {
+          url = "git+file:./modules/ide/nvim/nvim/";
+          flake = false;
+      };
 	hyprland.url = "github:hyprwm/Hyprland";
   polymc.url = "github:PolyMC/PolyMC";
 };
