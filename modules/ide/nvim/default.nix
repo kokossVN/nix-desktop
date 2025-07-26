@@ -1,0 +1,18 @@
+{lib,config,pkgs,...}:
+with lib;
+let
+	cfg = config.modules.nvim;
+in
+ {
+	options.modules.nvim = { enable = mkEnableOption "nvim"; };
+	config = mkIf cfg.enable {
+	 programs.neovim =  {
+	 	enable = true;
+	 };
+	 xdg.configFile.nvim = {
+      source = ./nvim ;
+      recursive = true;
+    };
+	};
+ }
+
