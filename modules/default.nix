@@ -6,16 +6,13 @@
       # select Python packages here
       easyocr
     ]))
-	kitty 
+    kitty 
     obs-studio 
     discord 
     nodejs
     gcc 
     fzf 
     gnumake 
-    badlion-client  
-    prismlauncher 
-    polymc
     nautilus
   ];
 	imports = [
@@ -23,5 +20,6 @@
 		./browser/firefox
 		./wayland
 		./input
+    ./gaming
 	];
 }
