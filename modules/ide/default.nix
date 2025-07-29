@@ -8,9 +8,10 @@ in
 	config = mkIf cfg.enable {
 	 programs.neovim =  {
 	 	enable = true;
+    plugins = [ pkgs.vimPlugins.lazy-nvim];
 	 };
 	 xdg.configFile.nvim = {
-      source = ./nvim;
+      source = ./nvim/nvim; #lazy, gonna fix soon
       recursive = true;
     };
 	};

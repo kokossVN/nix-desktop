@@ -107,6 +107,9 @@ in
 
   programs.light.enable = true;
 
+  programs.zsh.enable = true;
+
+  users.users.kokoss.shell = pkgs.zsh;
   system.stateVersion = "25.05"; # Did you read the comment?
 
 

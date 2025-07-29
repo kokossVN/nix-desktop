@@ -529,14 +529,18 @@
     "sub": {
       "flake": false,
       "locked": {
-        "path": "./modules/ide/nvim/nvim/",
-        "type": "path"
+        "lastModified": 1743581135,
+        "narHash": "sha256-opMZXC89Qq7RDLbr/WhUOAyRPFYqkjZtr8wWjflXGog=",
+        "ref": "refs/heads/main",
+        "rev": "5b205469bd9cde02806322abba34cb492a184359",
+        "revCount": 51,
+        "type": "git",
+        "url": "file:./modules/ide/nvim/nvim/"
       },
       "original": {
-        "path": "./modules/ide/nvim/nvim/",
-        "type": "path"
-      },
-      "parent": []
+        "type": "git",
+        "url": "file:./modules/ide/nvim/nvim/"
+      }
     },
     "systems": {
       "locked": {

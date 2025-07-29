@@ -1,0 +1,3 @@
+[submodule "modules/ide/nvim/nvim"]
+	path = modules/ide/nvim/nvim
+	url = https://github.com/kokossVN/lazyvim
