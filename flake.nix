@@ -15,7 +15,7 @@
       
         };
         sub = {
-          url = "git+file:./modules/ide/nvim/nvim/";
+          url = "git+file:hosts/kokoss/config/nvim?submodule=1";
           flake = false;
       };
 	hyprland.url = "github:hyprwm/Hyprland";

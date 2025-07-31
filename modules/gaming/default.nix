@@ -1,9 +1,19 @@
 {lib,config,pkgs,inputs,...}:
 with lib;
+let
+	cfg = config.modules.firefox;
+in
  {
-	home.packages = with pkgs; [
-    parsec-bin
-    polymc
-  ];
+	options.modules.firefox = { enable = mkEnableOption "firefox"; };
+	config = mkIf cfg.enable {
+    imports = {
+      ./minecraft.nix
+    };
+    home.packages = with pkgs; [
+      parsec-bin
+      # polymc
+    ];
+	};
  }
+
 

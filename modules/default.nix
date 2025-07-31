@@ -9,6 +9,7 @@
     };
   };
 
+
   programs.ssh = {
     enable = true;
   };
@@ -25,14 +26,13 @@
     discord 
     nautilus
 
-    #Terminal
+    #workflow
     kitty 
-
-    #Build/Dev
     gnumake 
     nodejs
     fzf
     gcc 
+    ripgrep
   ];
 
   #Submodule for optimize :>
@@ -42,6 +42,18 @@
 		./wayland
 		./input
     ./gaming
+    ./workflow
 	];
+
+  xdg.desktopEntries = {
+    discord = {
+      name = "Discord";
+      genericName = "All-in-one cross-platform voice and text chat for gamers, FUCK FCITX5";
+      exec = "zsh -c discord";
+      terminal = false;
+      categories = [ "Application" "Network" "InstantMessaging" ];
+      mimeType = ["x-scheme-handler/discord"];
+      };
+  };
 
 }

@@ -7,13 +7,9 @@ in
 	options.modules.nvim = { enable = mkEnableOption "nvim"; };
 	config = mkIf cfg.enable {
 	 programs.neovim =  {
-	 	enable = true;
-    plugins = [ pkgs.vimPlugins.lazy-nvim];
+      enable = true;
+      plugins = [ pkgs.vimPlugins.lazy-nvim];
 	 };
-	 xdg.configFile.nvim = {
-      source = ./nvim/nvim; #lazy, gonna fix soon
-      recursive = true;
-    };
 	};
  }
 
