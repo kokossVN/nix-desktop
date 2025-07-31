@@ -1,20 +1,25 @@
 {inputs, pkgs, config, ...}:
 {
-  programs.tmux.extraConfig = ''
+  programs.tmux = {
+    plugins = with pkgs; [
+      tmuxPlugins.catppuccin
+      tmuxPlugins.tmux-fzf
+    ];
+    extraConfig = ''
 # Enable mouse control (clickable windows, panes, resizable panes)
-set -g mouse on
+    set -g mouse on
 
 
 #remap prefix
 #defalut 'C-b' to C-s
 # this key bind will never repeat when hold the key
 
-unbind C-b
-set-option -g prefix C-s
-set-option -g repeat-time 0
-bind-key C-s send-prefix
-set -g default-terminal "screen-256color"
-set -s escape-time 0
+    unbind C-b
+    set-option -g prefix C-s
+    set-option -g repeat-time 0
+    bind-key C-s send-prefix
+    set -g default-terminal "screen-256color"
+    set -s escape-time 0
 
 #remap split pane
 #defalut vertical % and horizonal "
@@ -26,11 +31,12 @@ set -s escape-time 0
 # bind V split-window -v
 
 #move cusor like vim 
-bind -n C-k select-pane -U
-bind -n C-j select-pane -D
-bind -n C-h select-pane -L
-bind -n C-l select-pane -R
-  '';
+    bind -n C-k select-pane -U
+    bind -n C-j select-pane -D
+    bind -n C-h select-pane -L
+    bind -n C-l select-pane -R
+    '';
+  };
   xdg.configFile = {
       nvim = {
       source = ./config/nvim; #lazy, gonna fix soon

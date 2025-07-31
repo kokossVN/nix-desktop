@@ -18,12 +18,13 @@
           url = "git+file:hosts/kokoss/config/nvim?submodule=1";
           flake = false;
       };
-	hyprland.url = "github:hyprwm/Hyprland";
-  polymc.url = "github:PolyMC/PolyMC";
+	# hyprland.url = "github:hyprwm/Hyprland";
+	polymc.url = "github:PolyMC/PolyMC";
 };
 
   outputs =
-    { nixpkgs, home-manager, nur, hyprland, ... }@inputs:
+    # { nixpkgs, home-manager, nur, hyprland, ... }@inputs:
+    { nixpkgs, home-manager, nur,  ... }@inputs:
     let
 	system = "x86_64-linux"; #current system
 	pkgs = nixpkgs.legacyPackages.${system};
@@ -55,11 +56,11 @@
     {
 	nixosConfigurations = {
 		kokoss = mkSystem inputs.nixpkgs system "kokoss";
-		  nix.settings = {
-		    substituters = ["https://hyprland.cachix.org"];
-		    trusted-substituters = ["https://hyprland.cachix.org"];
-		    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-		  };
+		  # nix.settings = {
+		  #   substituters = ["https://hyprland.cachix.org"];
+		  #   trusted-substituters = ["https://hyprland.cachix.org"];
+		  #   trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+		  # };
 	};
     };
 }
