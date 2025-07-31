@@ -39,8 +39,8 @@
   };
   xdg.configFile = {
       nvim = {
-      source = ./config/nvim; #lazy, gonna fix soon
-      recursive = true;
+        source = ./config/nvim; #lazy, gonna fix soon
+        recursive = true;
     };
   };
 }

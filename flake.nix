@@ -19,7 +19,7 @@
           flake = false;
       };
 	# hyprland.url = "github:hyprwm/Hyprland";
-	polymc.url = "github:PolyMC/PolyMC";
+	polymc.url = "github:PolyMC/PolyMC"; #minecraft btw
 };
 
   outputs =
@@ -46,7 +46,7 @@
 				};
 				nixpkgs.overlays = [
 					nur.overlays.default
-          inputs.polymc.overlay
+          inputs.polymc.overlay #minecraft
 				];
 			}
 		]

@@ -91,33 +91,6 @@ in
   ];
 
 
-  services.tailscale.enable = true;
-
-
-  # add some config
-  
-  programs.hyprland = {
-  	enable = true;
-  };
-
-  services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    settings = {
-      PasswordAuthentication = true;
-      # AllowUsers = ["kokoss"]; # Allows all users by default. Can be [ "user1" "user2" ]
-      UseDns = true;
-      X11Forwarding = false;
-      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
-    };
-  };
- 
-
-  programs.light.enable = true;
-
-  programs.zsh.enable = true;
-
-  users.users.kokoss.shell = pkgs.zsh;
   system.stateVersion = "25.05"; # Did you read the comment?
 
 
