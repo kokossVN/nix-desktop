@@ -4,15 +4,14 @@ let
 	cfg = config.modules.gaming;
 in
  {
+  imports = [
+    ./minecraft
+  ];
 	options.modules.gaming = { enable = mkEnableOption "gaming"; };
 	config = mkIf cfg.enable {
-    imports = [
-      ./minecraft
-    ];
-
     home.packages = with pkgs; [
       parsec-bin
-      # polymc
+      polymc
     ];
 	};
  }

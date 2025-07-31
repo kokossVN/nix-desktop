@@ -1,5 +1,14 @@
-{inputs, pkgs, config, ...}:
+{inputs, pkgs, config, lib, ...}:
 {
+  #Submodule for optimize :>
+	imports = [
+		./ide
+		./browser
+		./wayland
+		./input
+    ./gaming
+    ./workflow
+	];
 	home.stateVersion = "25.05";
   #shell config
   programs.zsh = {
@@ -35,15 +44,6 @@
     ripgrep
   ];
 
-  #Submodule for optimize :>
-	imports = [
-		./ide
-		./browser
-		./wayland
-		./input
-    ./gaming
-    ./workflow
-	];
 
   xdg.desktopEntries = {
     discord = {
