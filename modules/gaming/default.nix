@@ -1,14 +1,15 @@
-{lib,config,pkgs,inputs,...}:
+{lib,config,pkgs,inputs,modulesPath,...}:
 with lib;
 let
-	cfg = config.modules.firefox;
+	cfg = config.modules.gaming;
 in
  {
-	options.modules.firefox = { enable = mkEnableOption "firefox"; };
+	options.modules.gaming = { enable = mkEnableOption "gaming"; };
 	config = mkIf cfg.enable {
     imports = [
-      ./minecraft.nix
+      ./minecraft
     ];
+
     home.packages = with pkgs; [
       parsec-bin
       # polymc
