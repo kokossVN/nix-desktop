@@ -49,18 +49,21 @@
           inputs.polymc.overlay
 				];
 			}
-		];
+		]
+      ++
+    (lib.optionals (builtins.pathExists (./. + "/modules/system/${hostname}.nix")) [(./. + "/modules/system/${hostname}.nix")])
+    ;
 		specialArgs = { inherit inputs; };
 	};
     in
     {
 	nixosConfigurations = {
 		kokoss = mkSystem inputs.nixpkgs system "kokoss";
-		  # nix.settings = {
-		  #   substituters = ["https://hyprland.cachix.org"];
-		  #   trusted-substituters = ["https://hyprland.cachix.org"];
-		  #   trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-		  # };
+		  nix.settings = {
+		    substituters = ["https://hyprland.cachix.org"];
+		    trusted-substituters = ["https://hyprland.cachix.org"];
+		    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+		  };
 	};
     };
 }

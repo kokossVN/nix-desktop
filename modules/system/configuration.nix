@@ -98,9 +98,6 @@ in
   
   programs.hyprland = {
   	enable = true;
-	# package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-	# # make sure to also set the portal package, so that they are in sync
-	# portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   services.openssh = {
@@ -108,14 +105,13 @@ in
     ports = [ 22 ];
     settings = {
       PasswordAuthentication = true;
-      AllowUsers = ["kokoss"]; # Allows all users by default. Can be [ "user1" "user2" ]
+      # AllowUsers = ["kokoss"]; # Allows all users by default. Can be [ "user1" "user2" ]
       UseDns = true;
       X11Forwarding = false;
       PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
   };
  
-  programs.git.enable = true;
 
   programs.light.enable = true;
 
