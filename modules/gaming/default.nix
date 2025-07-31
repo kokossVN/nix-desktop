@@ -6,9 +6,9 @@ in
  {
 	options.modules.firefox = { enable = mkEnableOption "firefox"; };
 	config = mkIf cfg.enable {
-    imports = {
+    imports = [
       ./minecraft.nix
-    };
+    ];
     home.packages = with pkgs; [
       parsec-bin
       # polymc
